@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Page Title</title>
+</head>
+<body>
+	<script>
+		//take user input (make case insensitive)
+
+function getComputerChoice() {
+    return Math.floor(Math.random() * 3);
+  }
+  
+  function getUserChoice() {
+    let c = prompt("do you choose rock, paper or scissors?");
+    c = c.toLowerCase();
+    return c;
+  }
+  
+  //make a function that makes the computer do a random number 1-3
+  
+  //make a function that takes user input and computer (random input) and see who winner is with if statements
+  
+  function whoWins() {
+  
+    var computerPoints = 0;
+    var userPoints = 0;
+    
+     for (let i=1 ; i<=3 ; i++) 
+     {
+          alert("round " + i + ":");
+       
+          var computerChoice = getComputerChoice();
+          var userChoice = getUserChoice();
+                
+          alert("you chose " + userChoice);
+        
+          if (computerChoice === 0) {
+            alert("the computer chose rock");
+            computerChoice='rock';
+          }
+          else if (computerChoice === 1) {
+            alert("the computer chose paper");
+            computerChoice='paper';
+          }
+          else {
+            alert("the computer chose scissors");
+            computerChoice='scissors';
+          }
+        
+          if (computerChoice === 'rock' && userChoice === 'scissors' || computerChoice ===     'scissors' && userChoice === 'paper' || computerChoice === 'paper' && userChoice === 'rock'  ) {
+            alert("you lost.");
+            computerPoints++
+          }
+          else if (computerChoice === userChoice) {
+            alert('it\'s a draw');
+            computerPoints++
+            userPoints++
+          }
+          else {
+            alert('you won.')
+            userPoints++
+          }
+          }
+    alert("final score. COMPUTER: " + computerPoints + ", USER: " + userPoints);
+  
+      if (userPoints > computerPoints) {
+        alert('you won the game!');
+      }
+      else if (userPoints === computerPoints) {
+        alert('it\'s a draw!');
+        }
+      else {
+        alert('you lost the game!')
+      }
+   }
+  
+  whoWins();
+  
+	</script>
+</body>
+</html>
